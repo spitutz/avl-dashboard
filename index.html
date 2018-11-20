@@ -18,10 +18,11 @@ iframe {
 window.onload = function() {
 
   var urls = [
-    "https://app.datadoghq.com/dash/239897/avl-delivery-service?live=true&page=0&is_auto=false&from_ts=1542705783815&to_ts=1542720183815&tile_size=m",
-    "https://app.datadoghq.com/dash/113806/avl-discovery-service?live=true&page=0&is_auto=false&from_ts=1542716622638&to_ts=1542720222638&tile_size=m",
-    // ....
-    "https://app.datadoghq.com/dash/202132/avl-rmq-load?live=true&page=0&is_auto=false&from_ts=1542705849169&to_ts=1542720249169&tile_size=m" // no ,!!
+    "https://app.datadoghq.com/dash/239897/avl-delivery-service?live=true&page=0&is_auto=false&from_ts=1542729252905&to_ts=1542743652905&tile_size=s&tv_mode=true",
+    "https://app.datadoghq.com/dash/968702/o2-vrm?live=true&page=0&is_auto=false&from_ts=1542729190384&to_ts=1542743590384&tile_size=s&tv_mode=true",
+    "https://app.datadoghq.com/dash/935047/volcano-prod?live=true&page=0&is_auto=false&from_ts=1542729126517&to_ts=1542743526517&tile_size=s&tv_mode=true",
+    "https://app.datadoghq.com/dash/850541/avl-strip-service?live=true&page=0&is_auto=false&from_ts=1542729346944&to_ts=1542743746944&tile_size=s&tv_mode=true",
+    "https://app.datadoghq.com/dash/850544/avl-image-service?live=true&page=0&is_auto=false&from_ts=1542729383967&to_ts=1542743783967&tile_size=s&tv_mode=true"
   ];
 
   var index = 0;
@@ -53,6 +54,6 @@ window.onload = function() {
     // continue rotating iframes
     setTimeout(rotate, 5000);
 
-  }, 5000); // 5000ms = 5s
+  }, 10000); // 10000ms = 10s
 };
 </script>
