@@ -1,0 +1,58 @@
+<style>
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+</style>
+
+<body>
+  <iframe id="rotator" src="about:blank"></iframe>
+</body>
+
+<script>
+// start when the page is loaded
+window.onload = function() {
+
+  var urls = [
+    "https://app.datadoghq.com/dash/239897/avl-delivery-service?live=true&page=0&is_auto=false&from_ts=1542705783815&to_ts=1542720183815&tile_size=m",
+    "https://app.datadoghq.com/dash/113806/avl-discovery-service?live=true&page=0&is_auto=false&from_ts=1542716622638&to_ts=1542720222638&tile_size=m",
+    // ....
+    "https://app.datadoghq.com/dash/202132/avl-rmq-load?live=true&page=0&is_auto=false&from_ts=1542705849169&to_ts=1542720249169&tile_size=m" // no ,!!
+  ];
+
+  var index = 0;
+  var prev_index = 0;
+  var el = document.getElementById("rotator");
+
+  for (var i = 0; i < urls.length; i++) {
+    var cloned_el = el.cloneNode(true);
+    cloned_el.id = "rotator" + i;
+    cloned_el.src = urls[i];
+    document.body.appendChild(cloned_el);
+  }
+
+  setTimeout(function rotate() {
+
+    if ( index === urls.length ) {
+      index = 0;
+    }
+
+    var prev_el = document.getElementById("rotator" + prev_index);
+    prev_el.style.visibility = 'hidden';
+
+    var el = document.getElementById("rotator" + index);
+    //el.src = urls[index];
+    el.style.visibility = 'visible';
+    prev_index = index;
+    index  = index + 1;
+
+    // continue rotating iframes
+    setTimeout(rotate, 5000);
+
+  }, 5000); // 5000ms = 5s
+};
+</script>
