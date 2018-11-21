@@ -22,7 +22,8 @@ window.onload = function() {
     "https://app.datadoghq.com/dash/968702/o2-vrm?live=true&page=0&is_auto=false&from_ts=1542729190384&to_ts=1542743590384&tile_size=s&tv_mode=true",
     "https://app.datadoghq.com/dash/935047/volcano-prod?live=true&page=0&is_auto=false&from_ts=1542729126517&to_ts=1542743526517&tile_size=s&tv_mode=true",
     "https://app.datadoghq.com/dash/850541/avl-strip-service?live=true&page=0&is_auto=false&from_ts=1542729346944&to_ts=1542743746944&tile_size=s&tv_mode=true",
-    "https://app.datadoghq.com/dash/850544/avl-image-service?live=true&page=0&is_auto=false&from_ts=1542729383967&to_ts=1542743783967&tile_size=s&tv_mode=true"
+    "https://app.datadoghq.com/dash/850544/avl-image-service?live=true&page=0&is_auto=false&from_ts=1542729383967&to_ts=1542743783967&tile_size=s&tv_mode=true",
+    "https://app.datadoghq.com/dash/366271/avl-hls-serving-service?live=true&page=0&is_auto=false&from_ts=1542778528006&to_ts=1542792928006&tile_size=s&tv_mode=true"
   ];
 
   var index = 0;
@@ -52,7 +53,7 @@ window.onload = function() {
     index  = index + 1;
 
     // continue rotating iframes
-    setTimeout(rotate, 5000);
+    setTimeout(rotate, 10000);
 
   }, 10000); // 10000ms = 10s
 };
